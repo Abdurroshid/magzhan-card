@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magzhan Madiyev – General Director</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 390px;
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: #2d2d2d;
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* decorative squiggle lines */
+    .header svg.squiggle {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.18;
+    }
+
+    .avatar-ring {
+      position: relative;
+      z-index: 1;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      overflow: hidden;
+      background: #555;
+    }
+
+    .avatar-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* placeholder gradient when no real photo */
+    .avatar-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #6b7280, #9ca3af);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    /* ── BODY ── */
+    .body {
+      padding: 28px 24px 32px;
+    }
+
+    .name {
+      font-size: 26px;
+      font-weight: 700;
+      color: #111;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+
+    .title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .org {
+      font-size: 13px;
+      font-weight: 400;
+      color: #888;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    /* ── CONTACT LIST ── */
+    .contacts {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #f5f5f5;
+      border-radius: 14px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+    }
+
+    .contact-item:hover { background: #ebebeb; }
+
+    .contact-item.active-border {
+      border: 1.5px solid #d0d0d0;
+      background: #f9f9f9;
+    }
+
+    .icon-wrap {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #333;
+    }
+
+    .icon-wrap svg { width: 20px; height: 20px; }
+
+    .contact-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: #999;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .contact-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .contact-info { flex: 1; }
+
+    .external-icon {
+      width: 18px;
+      height: 18px;
+      color: #bbb;
+      flex-shrink: 0;
+    }
+
+    /* ── SOCIAL ROW ── */
+    .section-label {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-top: 28px;
+      margin-bottom: 14px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .social-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .social-btn:hover { background: #e8e8e8; }
+    .social-btn svg { width: 20px; height: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <!-- Header with squiggle decoration -->
+  <div class="header">
+    <svg class="squiggle" viewBox="0 0 390 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-40 120 Q40 40 120 120 Q200 200 280 120 Q360 40 440 120" stroke="white" stroke-width="2.5" fill="none"/>
+      <path d="M-40 140 Q40 60 120 140 Q200 220 280 140 Q360 60 440 140" stroke="white" stroke-width="2.5" fill="none"/>
+      <path d="M-40 100 Q40 20 120 100 Q200 180 280 100 Q360 20 440 100" stroke="white" stroke-width="2" fill="none"/>
+    </svg>
+    <div class="avatar-ring">
+      <img src="avatar.jpg" alt="Magzhan Madiyev" />
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+    <p class="name">Magzhan Madiyev</p>
+    <p class="title">General Director</p>
+    <p class="org">Astana Hub International Technopark</p>
+
+    <div class="contacts">
+
+      <a href="tel:+77012220722" class="contact-item">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11 19.79 19.79 0 01.1 2.38 2 2 0 012.08.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+        </div>
+        <div class="contact-info">
+          <p class="contact-label">Phone</p>
+          <p class="contact-value">+7 701 222 07 22</p>
+        </div>
+      </a>
+
+      <a href="mailto:ceo@astanahub.com" class="contact-item active-border">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div class="contact-info">
+          <p class="contact-label">Email</p>
+          <p class="contact-value">ceo@astanahub.com</p>
+        </div>
+      </a>
+
+      <a href="https://astanahub.com" target="_blank" class="contact-item">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+          </svg>
+        </div>
+        <div class="contact-info">
+          <p class="contact-label">Website</p>
+          <p class="contact-value">astanahub.com</p>
+        </div>
+      </a>
+
+      <a href="https://maps.google.com/?q=C4.6+Mangilik+El,+Astana,+Kazakhstan" target="_blank" class="contact-item">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div class="contact-info">
+          <p class="contact-label">Office</p>
+          <p class="contact-value">C4.6 Mangilik El, Astana, Kazakhstan</p>
+        </div>
+        <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+
+    </div>
+
+    <!-- Social / Connect -->
+    <p class="section-label">Connect with me</p>
+    <div class="socials">
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/madiyev/" target="_blank" class="social-btn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+      <!-- Telegram -->
+      <a href="https://t.me/magzhan236" target="_blank" class="social-btn" title="Telegram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/madiyev/" target="_blank" class="social-btn" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.01" fill="currentColor" stroke-width="3"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
