@@ -383,15 +383,18 @@
       "X-SOCIALPROFILE;TYPE=telegram:https://t.me/magzhan236",
       "X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/madiyev/",
       "END:VCARD"
-    ].join("\n");
+    ].join("\r\n");
 
-    const blob = new Blob([vcard], { type: "text/vcard" });
-    const url = URL.createObjectURL(blob);
+    // Works in Telegram, iOS, Android — no createObjectURL needed
+    const encoded = encodeURIComponent(vcard);
+    const dataUri = "data:text/vcard;charset=utf-8," + encoded;
+
     const a = document.createElement("a");
-    a.href = url;
+    a.href = dataUri;
     a.download = "Magzhan_Madiyev.vcf";
+    document.body.appendChild(a);
     a.click();
-    URL.revokeObjectURL(url);
+    document.body.removeChild(a);
   }
 </script>
 
