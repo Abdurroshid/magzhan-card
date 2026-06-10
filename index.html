@@ -354,49 +354,19 @@
 
   <!-- Save Contact Button -->
   <div class="save-wrap">
-    <button class="save-btn" onclick="saveContact()">
+    <a class="save-btn" href="magzhan.vcf">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/>
         <path d="M17 21v-8H7v8M7 3v5h8"/>
       </svg>
       Save Contact
-    </button>
+    </a>
   </div>
 
 </div>
 
 
-<script>
-  function saveContact() {
-    const vcard = [
-      "BEGIN:VCARD",
-      "VERSION:3.0",
-      "FN:Magzhan Madiyev",
-      "N:Madiyev;Magzhan;;;",
-      "ORG:Astana Hub International Technopark",
-      "TITLE:General Director",
-      "TEL;TYPE=CELL:+77012220722",
-      "EMAIL:ceo@astanahub.com",
-      "URL:https://astanahub.com",
-      "ADR;TYPE=WORK:;;C4.6 Mangilik El;Astana;;;Kazakhstan",
-      "X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/madiyev/",
-      "X-SOCIALPROFILE;TYPE=telegram:https://t.me/magzhan236",
-      "X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/madiyev/",
-      "END:VCARD"
-    ].join("\r\n");
 
-    // Works in Telegram, iOS, Android — no createObjectURL needed
-    const encoded = encodeURIComponent(vcard);
-    const dataUri = "data:text/vcard;charset=utf-8," + encoded;
-
-    const a = document.createElement("a");
-    a.href = dataUri;
-    a.download = "Magzhan_Madiyev.vcf";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
-</script>
 
 </body>
 </html>
