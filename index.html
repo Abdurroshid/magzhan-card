@@ -204,6 +204,34 @@
 
     .social-btn:hover { background: #e8e8e8; }
     .social-btn svg { width: 20px; height: 20px; }
+
+    /* ── SAVE BUTTON ── */
+    .save-wrap {
+      padding: 24px 24px 8px;
+    }
+
+    .save-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px;
+      background: #2d2d2d;
+      color: #fff;
+      border: none;
+      border-radius: 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      text-decoration: none;
+    }
+
+    .save-btn:hover { background: #444; }
+    .save-btn:active { transform: scale(0.98); }
+    .save-btn svg { width: 20px; height: 20px; }
   </style>
 </head>
 <body>
@@ -316,7 +344,49 @@
     </div>
 
   </div>
+
+  <!-- Save Contact Button -->
+  <div class="save-wrap">
+    <button class="save-btn" onclick="saveContact()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/>
+        <path d="M17 21v-8H7v8M7 3v5h8"/>
+      </svg>
+      Save Contact
+    </button>
+  </div>
+
 </div>
+
+
+<script>
+  function saveContact() {
+    const vcard = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "FN:Magzhan Madiyev",
+      "N:Madiyev;Magzhan;;;",
+      "ORG:Astana Hub International Technopark",
+      "TITLE:General Director",
+      "TEL;TYPE=CELL:+77012220722",
+      "EMAIL:ceo@astanahub.com",
+      "URL:https://astanahub.com",
+      "ADR;TYPE=WORK:;;C4.6 Mangilik El;Astana;;;Kazakhstan",
+      "X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/madiyev/",
+      "X-SOCIALPROFILE;TYPE=telegram:https://t.me/magzhan236",
+      "X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/madiyev/",
+      "END:VCARD"
+    ].join("\n");
+
+    const blob = new Blob([vcard], { type: "text/vcard" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Magzhan_Madiyev.vcf";
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+</script>
 
 </body>
 </html>
